@@ -1,0 +1,90 @@
+body{
+    background-color:#9aae2a;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(11, 150, 11);
+    padding: 20px 40px;
+}
+.header span{
+    font-family: monospace;
+    font-size: 20px;
+    color: cornsilk;
+
+}
+.menu-ligas button{
+
+    display:flex;
+    text-align: center;
+    border:none;
+    border-radius: 10px;
+    font-size: 20px;
+    gap:10px;
+    align-items:center;
+    transition: transform 0.2s ease , background-color 0.2s ease;
+    background-color: rgb(155, 200, 77);
+    cursor:pointer;
+    padding: 9px;
+
+}
+.menu-ligas button:hover{
+    background-color: rgb(110, 175, 6);
+    transform: scale(0.9);
+    color:white;
+
+}
+
+.header img{
+    width: 25px;
+}
+.menu-ligas {
+    display: flex;
+    gap: 40px;
+}
+.boton-iniciar-sesion {
+    background-color: crimson;
+    padding: 11px 20px;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-iniciar-sesion:hover {
+    background-color: brown;
+    transform: scale(1.1);
+}
+
+
+.carrusel-auto {
+  background-color: #ed1111;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.cinta {
+  display: inline-block;
+  animation: moverCinta 30s linear infinite;
+}
+
+.partido {
+  display: inline-block;
+  padding: 0 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Animación */
+@keyframes moverCinta {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
