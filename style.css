@@ -1,6 +1,7 @@
 body{
-    background-color:#9aae2a;
+    background-color:#f0f1ef;
 }
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -8,14 +9,14 @@ body{
     background-color: rgb(11, 150, 11);
     padding: 20px 40px;
 }
-.header span{
+
+.titulo {
     font-family: monospace;
     font-size: 20px;
     color: cornsilk;
-
 }
-.menu-ligas button{
 
+.boton-liga {
     display:flex;
     text-align: center;
     border:none;
@@ -27,22 +28,26 @@ body{
     background-color: rgb(155, 200, 77);
     cursor:pointer;
     padding: 9px;
-
+    
+    text-decoration: none; 
+    color: black; 
 }
-.menu-ligas button:hover{
+
+.boton-liga:hover {
     background-color: rgb(110, 175, 6);
     transform: scale(0.9);
     color:white;
-
 }
 
 .header img{
     width: 25px;
 }
+
 .menu-ligas {
     display: flex;
     gap: 40px;
 }
+
 .boton-iniciar-sesion {
     background-color: crimson;
     padding: 11px 20px;
@@ -58,7 +63,6 @@ body{
     background-color: brown;
     transform: scale(1.1);
 }
-
 
 .carrusel-auto {
   background-color: #ed1111;
@@ -82,9 +86,7 @@ body{
   font-size: 16px;
 }
 
-/* Animación */
 @keyframes moverCinta {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
