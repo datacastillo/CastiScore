@@ -1,92 +1,189 @@
-body{
-    background-color:#f0f1ef;
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
 }
 
-.header{
+* {
+    box-sizing: border-box;
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(11, 150, 11);
-    padding: 20px 40px;
+    padding: 15px 30px;
+    background-color: #1E8449;
+    border-bottom: 1px solid #145A32;
 }
 
-.titulo {
+.header .titulo {
     font-family: monospace;
-    font-size: 20px;
-    color: cornsilk;
-}
-
-.boton-liga {
-    display:flex;
-    text-align: center;
-    border:none;
-    border-radius: 10px;
-    font-size: 20px;
-    gap:10px;
-    align-items:center;
-    transition: transform 0.2s ease , background-color 0.2s ease;
-    background-color: rgb(155, 200, 77);
-    cursor:pointer;
-    padding: 9px;
-    
-    text-decoration: none; 
-    color: black; 
-}
-
-.boton-liga:hover {
-    background-color: rgb(110, 175, 6);
-    transform: scale(0.9);
-    color:white;
-}
-
-.header img{
-    width: 25px;
-}
-
-.menu-ligas {
-    display: flex;
-    gap: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .boton-iniciar-sesion {
-    background-color: crimson;
-    padding: 11px 20px;
-    color: white;
-    border-radius: 7px;
+    background-color: #ffffff;
+    color: #1E8449;
     border: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
 .boton-iniciar-sesion:hover {
-    background-color: brown;
-    transform: scale(1.1);
+    background-color: #edf2f7;
+}
+
+.layout-principal {
+    display: flex;
+}
+
+.nav-lateral {
+    width: 250px;
+    min-height: calc(100vh - 69px);
+    background-color: #1E8449;
+    padding: 20px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.nav-lateral a {
+    display: block;
+    color: #f0fff4;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-lateral a:hover {
+    background-color: #27AE60;
+    color: #ffffff;
+}
+
+.nav-lateral a.activo {
+    background-color: #27AE60;
+    color: #ffffff;
+}
+
+.contenido-principal {
+    flex-grow: 1;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1a202c;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .carrusel-auto {
-  background-color: #ed1111;
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px 0;
-  border-radius: 10px;
-  margin-top: 30px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .cinta {
-  display: inline-block;
-  animation: moverCinta 30s linear infinite;
+    display: inline-block;
+    -webkit-animation: moverCinta 30s linear infinite;
+    animation: moverCinta 30s linear infinite;
 }
 
 .partido {
-  display: inline-block;
-  padding: 0 30px;
-  font-weight: bold;
-  font-size: 16px;
+    display: inline-block;
+    padding: 0 30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #718096;
+}
+
+@-webkit-keyframes moverCinta {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(-50%); }
 }
 
 @keyframes moverCinta {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.predicciones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.prediccion {
+    flex-grow: 1;
+    flex-basis: calc(50% - 10px);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.prediccion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7fafc;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #718096;
+    text-transform: uppercase;
+}
+
+.prediccion-body {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.prediccion-body .equipos {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+}
+
+.prediccion-body .pronostico {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E8449;
+    margin: 0;
+}
+
+.prediccion-footer {
+    padding: 10px 15px;
+    background-color: #f7fafc;
+    text-align: right;
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.pendiente {
+    background-color: #F6E05E;
+    color: #1a202c;
 }

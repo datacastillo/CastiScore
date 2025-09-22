@@ -1,25 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CastiScore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+
     <header class="header">
         <h1 class="titulo">CastiScore</h1>
-        <button class="boton-iniciar-sesion">Iniciar sesion</button>
+        <button class="boton-iniciar-sesion">Iniciar sesión</button>
     </header>
 
     <div class="layout-principal">
         
         <nav class="nav-lateral">
-            <a href="#" class="boton-liga">La Liga</a>
-            <a href="#" class="boton-liga">Liga Mx</a>
-            <a href="#" class="boton-liga">Premier League</a>
-            <a href="#" class="boton-liga">Mas Ligas</a>
+            <a href="#" class="activo">Predicciones</a>
+            <a href="#">Resultados</a>
+            <a href="#">Ligas</a>
+            <a href="#">Estadísticas</a>
         </nav>
 
         <main class="contenido-principal">
-            <section class="carrusel-partidos">
+            
+            <div class="card">
                 <h2>Partidos Relevantes</h2>
-                </section>
+                <div class="carrusel-auto">
+                    <div class="cinta">
+                        <div class="partido">🇪🇸 Real Madrid vs Barcelona</div>
+                        <div class="partido">🇲🇽 Tigres vs América</div>
+                        <div class="partido">🏴‍☠️ Arsenal vs Chelsea</div>
+                        <div class="partido">🇮🇹 Juventus vs Napoli</div>
+                        <div class="partido">🇫🇷 PSG vs Lyon</div>
+                        <div class="partido">🇪🇸 Real Madrid vs Barcelona</div>
+                        <div class="partido">🇲🇽 Tigres vs América</div>
+                        <div class="partido">🏴‍☠️ Arsenal vs Chelsea</div>
+                        <div class="partido">🇮🇹 Juventus vs Napoli</div>
+                        <div class="partido">🇫🇷 PSG vs Lyon</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Predicciones del Día</h2>
+
+                <div class="predicciones-grid">
+
+                    <div class="prediccion">
+                        <div class="prediccion-header">
+                            <span class="liga">La Liga</span>
+                            <span class="fecha">22 SEP 2025 - 14:00</span>
+                        </div>
+                        <div class="prediccion-body">
+                            <h3 class="equipos">Real Madrid vs FC Barcelona</h3>
+                            <p class="pronostico">Gana Real Madrid</p>
+                        </div>
+                        <div class="prediccion-footer">
+                            <span class="status pendiente">Pendiente</span>
+                        </div>
+                    </div>
+
+                    <div class="prediccion">
+                        <div class="prediccion-header">
+                            <span class="liga">Premier League</span>
+                            <span class="fecha">22 SEP 2025 - 11:30</span>
+                        </div>
+                        <div class="prediccion-body">
+                            <h3 class="equipos">Arsenal vs Chelsea</h3>
+                            <p class="pronostico">Ambos Anotan</p>
+                        </div>
+                        <div class="prediccion-footer">
+                            <span class="status pendiente">Pendiente</span>
+                        </div>
+                    </div>
+
+                    <div class="prediccion">
+                        <div class="prediccion-header">
+                            <span class="liga">Liga MX</span>
+                            <span class="fecha">22 SEP 2025 - 20:00</span>
+                        </div>
+                        <div class="prediccion-body">
+                            <h3 class="equipos">Tigres vs América</h3>
+                            <p class="pronostico">Más de 2.5 Goles</p>
+                        </div>
+                        <div class="prediccion-footer">
+                            <span class="status pendiente">Pendiente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="prediccion">
+                        <div class="prediccion-header">
+                            <span class="liga">Serie A</span>
+                            <span class="fecha">23 SEP 2025 - 13:45</span>
+                        </div>
+                        <div class="prediccion-body">
+                            <h3 class="equipos">Juventus vs Napoli</h3>
+                            <p class="pronostico">Menos de 2.5 Goles</p>
+                        </div>
+                        <div class="prediccion-footer">
+                            <span class="status pendiente">Pendiente</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </main>
 
     </div> 
 
-    <script src="script.js"></script>
 </body>
+</html>
