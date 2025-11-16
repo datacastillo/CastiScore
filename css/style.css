@@ -1,0 +1,1703 @@
+/* ========================================================= */
+/* 0. VARIABLES Y BASE (Diseño Premium y Verde Esmeralda)    */
+/* ========================================================= */
+:root {
+    /* Colores primarios (Fondo Claro) */
+    --color-fondo-principal: #f8fafc; /* Fondo muy claro y limpio */
+    --color-fondo-secundario: #ffffff; /* Fondo blanco puro para tarjetas */
+    
+    /* Colores de texto y elementos generales */
+    --color-texto-oscuro-principal: #0f172a; /* Azul oscuro casi negro (Headings) */
+    --color-texto-oscuro-secundario: #475569; /* Gris oscuro para cuerpo y metadatos */
+    --color-texto-claro: #ffffff;
+    --color-sombra-suave: rgba(0, 0, 0, 0.08); /* Sombra más pronunciada pero suave */
+    
+    /* Colores de acento (VERDE ESMERALDA como principal) */
+    --color-acento-principal: #10b981; /* VERDE ESMERALDA (Botones, Activo, Bordes) */
+    --color-acento-secundario: #007bff; /* Azul (para links/secundario) */
+    --color-acento-perdida: #ef4444; /* Rojo para ALTO RIESGO / PERDIDA */
+    --color-acento-pendiente: #10b981; /* Verde para PENDIENTE/ACTIVO */
+    --color-acento-ev-positivo: #ffd700; /* Oro para Resaltado (Ya no se usa, pero se mantiene la variable) */
+    
+    /* Radios y Sombras */
+    --border-radius-pequeño: 4px;
+    --border-radius-medio: 10px; 
+    --border-radius-grande: 16px; 
+    --box-shadow-card: 0 6px 16px var(--color-sombra-suave); 
+    
+    /* Tipografía */
+    --font-family-titulo: 'Montserrat', sans-serif;
+    --font-family-cuerpo: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-cuerpo);
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-oscuro-principal);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-titulo);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-acento-principal);
+    transition: color 0.2s;
+}
+
+/* ========================================================= */
+/* 1. LAYOUT PRINCIPAL Y NAVEGACIÓN LATERAL                  */
+/* ========================================================= */
+.layout-principal {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* NAVEGACIÓN LATERAL */
+.nav-lateral {
+    width: 260px;
+    background-color: var(--color-fondo-secundario);
+    padding: 30px 0;
+    box-shadow: 2px 0 10px var(--color-sombra-suave); 
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.nav-header {
+    font-family: var(--font-family-titulo);
+    font-size: 1.6em; 
+    font-weight: 900;
+    color: var(--color-texto-oscuro-principal);
+    padding: 0 30px 25px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 10px;
+}
+
+.nav-lateral a {
+    padding: 12px 30px;
+    color: var(--color-texto-oscuro-secundario);
+    font-size: 0.95em;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-lateral a:hover {
+    color: var(--color-acento-principal);
+    background-color: #f0fdf4; 
+}
+
+.nav-lateral a.activo {
+    color: var(--color-acento-principal);
+    background-color: #ecfdf5; 
+    border-left-color: var(--color-acento-principal);
+    font-weight: 700;
+}
+
+/* WIDGET DE PATROCINIO */
+.widget-patrocinio {
+    padding: 20px 25px;
+    margin: 30px 20px 0 20px;
+    background-color: #fffbeb; 
+    border: 1px solid #fde047;
+    border-radius: var(--border-radius-medio);
+    box-shadow: 0 4px 12px rgba(253, 224, 71, 0.3); 
+    text-align: center;
+}
+
+.patrocinio-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.patrocinio-header .icono-patrocinio {
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+
+.patrocinio-header p {
+    font-weight: 800;
+    font-size: 0.9em;
+    color: #a16207; 
+}
+
+.patrocinio-mensaje {
+    font-size: 0.8em;
+    color: #713f12;
+    margin-bottom: 15px;
+}
+
+.boton-patrocinio {
+    display: block;
+    padding: 9px 15px;
+    font-size: 0.85em;
+    font-weight: 800;
+    background-color: #facc15; 
+    color: var(--color-texto-oscuro-principal);
+    border-radius: var(--border-radius-pequeño);
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(250, 202, 21, 0.5);
+}
+.boton-patrocinio:hover {
+    background-color: #eab308;
+}
+
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-contenido {
+    margin-bottom: 35px;
+}
+
+.header-contenido h1 {
+    font-size: 2.8em; 
+    color: var(--color-texto-oscuro-principal);
+    margin-bottom: 5px;
+    font-weight: 900;
+}
+
+.header-contenido p {
+    font-size: 1.1em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 400;
+}
+
+/* Base de todas las tarjetas */
+.card {
+    background-color: var(--color-fondo-secundario);
+    border-radius: var(--border-radius-medio);
+    box-shadow: var(--box-shadow-card);
+    border: 1px solid #f1f5f9; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ========================================================= */
+/* 3. HERO PICK "DATA-CORE"                                  */
+/* ========================================================= */
+
+.hero-data-core {
+    width: 100%;
+    max-width: 950px; 
+    color: white; 
+    padding: 0; 
+    border-radius: var(--border-radius-grande); 
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05); 
+}
+
+.data-core-body { 
+    background: #0f172a; 
+    padding: 0 30px; 
+}
+
+/* Header de Metadatos */
+.data-core-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.05); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-core-header .sub-header-pick {
+    font-size: 0.8em;
+    font-weight: 800;
+    color: var(--color-acento-principal); 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.data-core-header .match-meta {
+    font-size: 0.75em;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Sección principal del partido */
+.data-core-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 0px 25px 0px; 
+    text-align: center;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.team-badge {
+    width: 65px; 
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    font-family: var(--font-family-titulo);
+    font-size: 1.6em;
+    font-weight: 900;
+    color: var(--color-texto-claro);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6) inset;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.vs-text {
+    font-size: 2em;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 20px;
+}
+
+.match-title {
+    font-size: 2.5em; 
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.core-pronostico {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 25px;
+    border-radius: var(--border-radius-pequeño);
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* LÍNEA INFERIOR DE MÉTRICAS */
+.data-core-metrics-bar {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    background: #000000; 
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    gap: 40px;
+}
+
+.core-metrica {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-right: 0;
+}
+
+.metrica-valor-num {
+    font-family: var(--font-family-titulo);
+    font-size: 2em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: white;
+}
+
+.metrica-valor-label {
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+}
+
+/* Botón de la barra inferior */
+.boton-data-core {
+    margin-left: auto; 
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius-pequeño);
+    background: var(--color-acento-principal); 
+    color: var(--color-texto-claro); 
+    transition: all 0.2s ease-in-out; 
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+.boton-data-core:hover {
+    background: #059669; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* --- Estilos para la Opción 2: Etiqueta de Riesgo Calificado (HERO) --- */
+.data-core-metrics-bar .metrica-calificacion {
+    margin-right: 10px;
+}
+.data-core-metrics-bar .risk-badge {
+    font-size: 0.9em;
+    padding: 6px 15px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+/* ========================================================= */
+/* 4. PICKS SECUNDARIOS (Grid y Tarjetas)                    */
+/* ========================================================= */
+.picks-destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+    width: 100%; 
+}
+
+.pick-destacado-card {
+    color: var(--color-texto-oscuro-principal); 
+    padding: 20px; 
+    position: relative;
+    overflow: hidden;
+}
+.pick-destacado-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--color-sombra-suave);
+}
+
+.pick-destacado-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: var(--color-texto-oscuro-secundario);
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 6px;
+    font-weight: 500;
+}
+.pick-destacado-header span:first-child.status-pendiente {
+    font-weight: 700;
+    color: var(--color-acento-pendiente);
+}
+
+.pick-destacado-body h3 {
+    font-size: 1.3em;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.pick-destacado-pronostico {
+    font-size: 0.9em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.pick-destacado-metricas {
+    display: flex;
+    gap: 15px;
+}
+
+.pick-destacado-metrica {
+    font-size: 0.85em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 400;
+}
+
+.pick-destacado-metrica strong {
+    font-weight: 800;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.pick-destacado-metrica.positivo strong {
+    color: var(--color-acento-principal); 
+}
+
+
+/* ========================================================= */
+/* 6. FILTROS Y CONTROLES (PICK-VALOR PAGE)                  */
+/* ========================================================= */
+
+.filtros-picks-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo-secundario);
+    padding: 18px 25px;
+    border-radius: var(--border-radius-medio);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.filtro-deporte, .filtro-liga {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--color-texto-oscuro-secundario);
+}
+
+.input-estilizado {
+    padding: 10px 14px;
+    border-radius: var(--border-radius-pequeño);
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-estilizado:focus {
+    border-color: var(--color-acento-principal);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.info-adicional {
+    font-size: 0.95em;
+    font-weight: 700;
+    color: var(--color-texto-oscuro-principal);
+}
+
+
+/* ========================================================= */
+/* 7. TARJETAS DE LISTADO DE PICKS (AJUSTE DE PROPORCIÓN)    */
+/* ========================================================= */
+
+.picks-grid-completo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px;
+}
+
+.pick-list-card {
+    padding: 25px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid var(--color-acento-pendiente); 
+    border-radius: var(--border-radius-medio);
+    transition: all 0.3s ease;
+}
+
+.pick-list-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 30px var(--color-sombra-suave);
+}
+
+/* Indicador de Estado (Estilizado) */
+.card-status {
+    font-size: 0.8em;
+    font-weight: 900;
+    line-height: 1;
+    color: #065f46; 
+    
+    background-color: #d1fae5; 
+    padding: 4px 8px;
+    border-radius: var(--border-radius-pequeño);
+    margin-right: 15px; 
+}
+
+/* Metadatos (Liga y Hora) - Layout perfecto */
+.card-metadatos {
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap; 
+    
+    font-size: 0.85em;
+    color: var(--color-texto-oscuro-secundario);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9; 
+}
+
+.card-metadatos .liga {
+    margin-left: auto; 
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.card-metadatos .hora {
+    font-weight: 800; 
+    color: var(--color-texto-oscuro-principal); 
+}
+
+/* Título y Pronóstico */
+.card-principal {
+    margin-bottom: 30px;
+    flex-grow: 1; 
+}
+
+.card-principal .partido {
+    font-size: 1.8em; 
+    font-weight: 900;
+    color: var(--color-texto-oscuro-principal);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.card-principal .pronostico {
+    font-size: 1em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 600; 
+}
+
+/* Métrica Inferior - Alto Contraste y Distribución Uniforme */
+.card-metricas {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.metrica {
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    flex-basis: 33%; 
+    flex-grow: 1;
+}
+
+.metrica .valor-num {
+    font-family: var(--font-family-titulo);
+    font-size: 1.6em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.metrica .valor-label {
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--color-texto-oscuro-secundario);
+    margin-top: 5px;
+}
+
+/* --- Estilos para la Opción 2: Etiqueta de Riesgo Calificado (LISTA) --- */
+.metrica-calificacion {
+    padding-right: 15px;
+    border-right: 1px solid #f1f5f9; 
+}
+
+.risk-badge {
+    font-family: var(--font-family-titulo);
+    font-size: 0.9em;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: var(--border-radius-pequeño);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 5px; 
+}
+
+/* Colores específicos para los niveles de riesgo */
+.badge-bajo {
+    background-color: var(--color-acento-principal); 
+    color: var(--color-texto-claro);
+    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.4);
+}
+
+.badge-medio {
+    background-color: #fcd34d; 
+    color: var(--color-texto-oscuro-principal);
+}
+
+.badge-alto {
+    background-color: var(--color-acento-perdida); 
+    color: var(--color-texto-claro);
+}
+
+/* Botón de Análisis (Ancho completo) */
+.boton-analisis {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: var(--color-acento-principal);
+    color: var(--color-texto-claro);
+    font-weight: 800;
+    border-radius: var(--border-radius-pequeño);
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    font-size: 1em;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+.boton-analisis:hover {
+    background-color: #059669; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* ========================================================= */
+/* 9. ESTILOS DE LA PÁGINA ANÁLISIS DETALLADO                */
+/* ========================================================= */
+
+.detalle-hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--color-acento-principal);
+    box-shadow: 0 8px 20px var(--color-sombra-suave);
+}
+
+.detalle-partido-info {
+    flex-grow: 1;
+}
+
+.detalle-liga {
+    font-size: 0.85em;
+    font-weight: 700;
+    color: var(--color-acento-principal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.detalle-titulo {
+    font-size: 2.2em;
+    font-weight: 900;
+    color: var(--color-texto-oscuro-principal);
+    margin-bottom: 5px;
+}
+
+.detalle-pronostico {
+    font-size: 1.1em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 500;
+}
+
+/* Sección de Métricas de Resumen */
+.detalle-metricas-resumen {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 30px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.resumen-metrica {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.resumen-valor-num {
+    font-family: var(--font-family-titulo);
+    font-size: 1.8em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.resumen-valor-num.is-ia {
+    color: var(--color-acento-principal); /* Destacar la Probabilidad IA */
+}
+
+.resumen-valor-label {
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--color-texto-oscuro-secundario);
+    margin-top: 5px;
+}
+
+/* Contenido del Análisis (Cuerpo) */
+.detalle-cuerpo-analisis {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna para las secciones */
+    gap: 25px;
+}
+
+.detalle-seccion {
+    padding: 30px;
+}
+
+.seccion-titulo {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: var(--color-texto-oscuro-principal);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-acento-principal);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.seccion-parrafo {
+    font-size: 1em;
+    color: var(--color-texto-oscuro-secundario);
+    margin-bottom: 20px;
+}
+
+.lista-justificacion {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-justificacion li {
+    background-color: #f7f9fc;
+    border-left: 4px solid var(--color-acento-principal);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-pequeño);
+    font-size: 0.95em;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.lista-justificacion li strong {
+    font-weight: 700;
+}
+
+/* Gráfico de Probabilidad */
+.grafico-probabilidad {
+    margin-top: 20px;
+}
+
+.probabilidad-item {
+    margin-bottom: 15px;
+}
+
+.probabilidad-item .label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.barra-contenedor {
+    background-color: #e2e8f0;
+    border-radius: var(--border-radius-pequeño);
+    height: 30px;
+    overflow: hidden;
+}
+
+.barra {
+    height: 100%;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: width 1s ease-out;
+}
+
+.barra-local {
+    background-color: var(--color-acento-principal);
+}
+.barra-empate {
+    background-color: #fcd34d; /* Amarillo/Naranja */
+    color: var(--color-texto-oscuro-principal);
+}
+.barra-visitante {
+    background-color: var(--color-acento-perdida);
+}
+
+
+/* Tabla de Métricas Avanzadas */
+.tabla-metricas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-metricas thead th {
+    background-color: #f1f5f9;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 700;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tabla-metricas tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95em;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.tabla-metricas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-metricas tbody td.positivo {
+    color: var(--color-acento-principal);
+    font-weight: 700;
+}
+.tabla-metricas tbody td.negativo {
+    color: var(--color-acento-perdida);
+    font-weight: 700;
+}
+
+
+/* 8. RESPONSIVE DESIGN (Media Queries) */
+@media (max-width: 1024px) {
+    .nav-lateral {
+        width: 240px;
+    }
+    .contenido-principal {
+        padding: 30px 20px;
+    }
+    .hero-data-core {
+        max-width: 100%;
+    }
+    .picks-destacados-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .picks-grid-completo {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
+    .card-metricas {
+        gap: 20px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-principal {
+        flex-direction: column;
+    }
+    .nav-lateral {
+        width: 100%;
+        padding: 0;
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+    .nav-header {
+        display: none; 
+    }
+    .nav-lateral a {
+        padding: 10px 20px;
+        border-left: none;
+        display: inline-block; 
+        border-bottom: 2px solid transparent;
+    }
+    .nav-lateral a.activo {
+        border-bottom: 2px solid var(--color-acento-principal);
+        background-color: transparent;
+    }
+    .widget-patrocinio {
+        display: none; 
+    }
+    .contenido-principal {
+        padding: 20px 15px;
+    }
+    .filtros-picks-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .info-adicional {
+        margin-top: 10px;
+    }
+    .picks-destacados-grid, .picks-grid-completo {
+        grid-template-columns: 1fr;
+    }
+    /* Ajustes para la tarjeta Data-Core en móvil */
+    .data-core-metrics-bar {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 15px;
+        padding: 15px;
+    }
+    .data-core-metrics-bar .core-metrica {
+        flex-grow: 1;
+        flex-basis: 40%;
+        text-align: center;
+    }
+    .data-core-metrics-bar .metrica-calificacion {
+        border-right: none;
+    }
+    .boton-data-core {
+        margin-left: 0; 
+        flex-basis: 100%; 
+    }
+    /* Ajuste de métricas de lista en móvil */
+    .card-metricas {
+        flex-wrap: wrap; 
+        gap: 15px;
+    }
+    .metrica {
+        flex-basis: 45%; 
+    }
+    .metrica-calificacion {
+        border-right: none;
+    }
+    /* Responsive adjustments for Detail page */
+    .detalle-hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .detalle-titulo {
+        font-size: 1.8em;
+    }
+    .detalle-metricas-resumen {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .resumen-metrica {
+        text-align: left;
+    }
+}
+/* ========================================================= */
+/* 10. ESTILOS DE LA PÁGINA HISTORIAL DE PICKS               */
+/* ========================================================= */
+
+/* Panel de Estadísticas Globales */
+.panel-estadisticas-historial {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--color-acento-principal);
+}
+
+.estadistica-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.valor-grande {
+    font-family: var(--font-family-titulo);
+    font-size: 2.5em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-texto-oscuro-principal);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.valor-grande.positivo {
+    color: var(--color-acento-principal);
+}
+
+.label-pequeno {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-texto-oscuro-secundario);
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste de Filtros */
+.historial-filtros {
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+/* Contenedor de la Tabla */
+.tabla-historial-contenedor {
+    overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
+    padding: 0;
+}
+
+/* Tabla de Historial */
+.tabla-historial {
+    width: 100%;
+    min-width: 800px; /* Asegura legibilidad en desktop */
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tabla-historial thead th {
+    background-color: #f1f5f9;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 700;
+    padding: 15px 12px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tabla-historial tbody tr {
+    transition: background-color 0.2s;
+}
+
+.tabla-historial tbody tr:hover {
+    background-color: #f7f9fc;
+}
+
+.tabla-historial tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9em;
+    color: var(--color-texto-oscuro-principal);
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ancho de columnas */
+.tabla-historial thead th:nth-child(2) { width: 35%; } /* Partido y Pronóstico */
+.tabla-historial thead th:nth-child(1) { width: 15%; } 
+
+/* BADGES DE RESULTADO */
+.resultado-badge {
+    font-size: 0.75em !important;
+    font-weight: 900;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-pequeño);
+    text-align: center;
+    white-space: nowrap;
+    display: block;
+    width: fit-content;
+}
+
+.badge-ganado {
+    background-color: var(--color-acento-principal); /* Verde Esmeralda */
+    color: var(--color-texto-claro);
+}
+
+.badge-perdido {
+    background-color: var(--color-acento-perdida); /* Rojo */
+    color: var(--color-texto-claro);
+}
+
+.badge-pendiente {
+    background-color: #fcd34d; /* Amarillo/Naranja */
+    color: var(--color-texto-oscuro-principal);
+}
+
+/* Botón Detalle en la Tabla */
+.boton-detalle-tabla {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    background-color: #e2e8f0;
+    color: var(--color-texto-oscuro-secundario);
+    border-radius: var(--border-radius-pequeño);
+    transition: background-color 0.2s;
+}
+.boton-detalle-tabla:hover {
+    background-color: #cbd5e1;
+}
+
+/* Responsive adjustments for Historial page */
+@media (max-width: 768px) {
+    .panel-estadisticas-historial {
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+    }
+    .estadistica-item {
+        flex-basis: 45%;
+        margin-bottom: 10px;
+    }
+    .valor-grande {
+        font-size: 2em;
+    }
+    .historial-filtros {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .tabla-historial-contenedor {
+        margin-top: 20px;
+    }
+}
+/* ========================================================= */
+/* 11. ESTILOS DE LA PÁGINA RACHAS                           */
+/* ========================================================= */
+
+/* Racha Hero Card (Máximo Impacto) */
+.racha-hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: #0f172a; /* Fondo oscuro para alto contraste */
+    color: var(--color-texto-claro);
+    border-radius: var(--border-radius-grande);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.racha-titulo {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: var(--color-acento-principal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.racha-principal {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.racha-contador {
+    font-family: monospace;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--color-acento-principal);
+    letter-spacing: 5px;
+}
+
+.racha-resultado {
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.racha-resultado.negativo {
+    color: var(--color-acento-perdida);
+}
+
+.racha-mensaje {
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.racha-datos-historicos {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.dato-historico-item {
+    text-align: center;
+}
+
+.historico-valor {
+    font-family: var(--font-family-titulo);
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--color-acento-principal);
+    display: block;
+}
+
+.historico-valor.negativo {
+    color: var(--color-acento-perdida);
+}
+
+.historico-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* Rendimiento por Riesgo Grid */
+.grid-rendimiento-riesgo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.rendimiento-card {
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rendimiento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    /* Color de la barra superior definido por el badge */
+}
+
+/* Colores de las barras superiores de rendimiento */
+.rendimiento-card.badge-bajo::before {
+    background-color: var(--color-acento-principal); 
+}
+.rendimiento-card.badge-medio::before {
+    background-color: #fcd34d; 
+}
+.rendimiento-card.badge-alto::before {
+    background-color: var(--color-acento-perdida); 
+}
+
+.rendimiento-header {
+    font-size: 0.9em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: var(--color-texto-oscuro-secundario);
+}
+
+.rendimiento-metricas {
+    margin-bottom: 20px;
+}
+
+.metricas-valor {
+    font-family: var(--font-family-titulo);
+    font-size: 3em;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.metricas-valor.positivo {
+    color: var(--color-acento-principal);
+}
+.metricas-valor.negativo {
+    color: var(--color-acento-perdida);
+}
+
+.metricas-label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-texto-oscuro-secundario);
+    margin-top: 5px;
+    display: block;
+}
+
+.rendimiento-detalle p {
+    font-size: 0.85em;
+    color: var(--color-texto-oscuro-secundario);
+}
+
+
+/* Visualización de Resultados Recientes (Secuencia) */
+.resultados-recientes-secuencia {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.resultado-item {
+    font-family: var(--font-family-titulo);
+    font-size: 1.2em;
+    font-weight: 900;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-pequeño);
+    color: var(--color-texto-claro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.resultado-item.ganado {
+    background-color: var(--color-acento-principal);
+}
+.resultado-item.perdido {
+    background-color: var(--color-acento-perdida);
+}
+.resultado-item.pendiente {
+    background-color: #fcd34d;
+    color: var(--color-texto-oscuro-principal);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .racha-hero-card {
+        padding: 30px 20px;
+    }
+    .racha-resultado {
+        font-size: 2.5em;
+    }
+    .racha-datos-historicos {
+        gap: 20px;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .grid-rendimiento-riesgo {
+        grid-template-columns: 1fr;
+    }
+    .resultado-item {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+}
+/* ========================================================= */
+/* 12. ESTILOS DE LA PÁGINA TENDENCIAS GLOBALES              */
+/* ========================================================= */
+
+.sub-seccion-titulo {
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: var(--color-texto-oscuro-principal);
+}
+
+/* Gráfico de Distribución (Barras Apiladas Simulado) */
+.card-grafico-resumen {
+    padding: 30px;
+}
+
+.grafico-distribucion {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    border-radius: var(--border-radius-pequeño);
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.barra-distribucion {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-acento-principal); /* Base: Fútbol */
+    transition: width 0.5s ease-out;
+}
+
+.barra-nba {
+    background-color: #007bff; /* Azul */
+}
+
+.barra-tenis {
+    background-color: #fcd34d; /* Amarillo */
+}
+
+.barra-otros {
+    background-color: #94a3b8; /* Gris */
+}
+
+.barra-distribucion .etiqueta {
+    color: var(--color-texto-claro);
+    font-size: 0.9em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    padding: 0 5px;
+}
+/* Asegurar que las etiquetas pequeñas sean visibles */
+.barra-distribucion[style*="width: 5%"] .etiqueta {
+    font-size: 0.7em;
+    padding: 0;
+}
+
+.nota-distribucion {
+    font-size: 0.9em;
+    color: var(--color-texto-oscuro-secundario);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Tabla de Rendimiento de Ligas */
+.tabla-rendimiento-contenedor {
+    padding: 30px;
+}
+
+.tabla-rendimiento-ligas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabla-rendimiento-ligas thead th {
+    background-color: #f1f5f9;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 700;
+    padding: 15px 12px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-bottom: 2px solid var(--color-acento-principal);
+}
+
+.tabla-rendimiento-ligas tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95em;
+    color: var(--color-texto-oscuro-principal);
+}
+
+.tabla-rendimiento-ligas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-rendimiento-ligas td.positivo {
+    color: var(--color-acento-principal);
+    font-weight: 700;
+}
+.tabla-rendimiento-ligas td.negativo {
+    color: var(--color-acento-perdida);
+    font-weight: 700;
+}
+
+.nota-tendencia {
+    font-size: 0.9em;
+    color: var(--color-texto-oscuro-secundario);
+    font-weight: 500;
+    padding: 10px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Resumen por Mercado (Grid) */
+.mercado-resumen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.mercado-item {
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #f1f5f9;
+    border-radius: var(--border-radius-medio);
+}
+
+.mercado-nombre {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--color-texto-oscuro-principal);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mercado-valor {
+    font-family: var(--font-family-titulo);
+    font-size: 2em;
+    font-weight: 900;
+    line-height: 1.1;
+    display: block;
+}
+
+.mercado-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--color-texto-oscuro-secundario);
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabla-rendimiento-contenedor, .mercado-resumen-grid, .card-grafico-resumen {
+        padding: 15px;
+    }
+    .mercado-resumen-grid {
+        grid-template-columns: 1fr;
+    }
+    .grafico-distribucion {
+        height: 35px;
+    }
+    .barra-distribucion .etiqueta {
+        font-size: 0.8em;
+    }
+    .tabla-rendimiento-ligas {
+        min-width: 600px; /* Mantener la tabla legible en scroll */
+    }
+}
+
+/* ========================================================= */
+/* 13. ESTILOS PARLAY MILLONARIO IA (GANCHO)                 */
+/* ========================================================= */
+/* ========================================================= */
+/* 13. ESTILOS PARLAYS (FAVORITO y MILLONARIO)               */
+/* ========================================================= */
+
+.parlay-millonario-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.parlay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales para los dos parlays */
+    gap: 30px;
+}
+
+.parlay-ia-card {
+    background: #273040; /* Fondo oscuro */
+    color: #ffffff;
+    padding: 30px;
+    border-radius: var(--border-radius-grande);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.parlay-ia-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos Específicos para Parlay FAVORITO (más sobrio y dorado) */
+.parlay-favorito {
+    border: 3px solid #FFD700; /* Borde Oro */
+}
+.parlay-favorito .parlay-badge, .parlay-favorito .parlay-cuota-valor {
+    color: #FFD700; /* Color Oro para destacar */
+}
+.parlay-favorito .boton-parlay-ia {
+    background-color: #FFD700;
+    color: #1f2937;
+}
+
+/* Estilos Específicos para Parlay MILLONARIO (más llamativo y rojo/naranja) */
+.parlay-millonario {
+    background: linear-gradient(135deg, #273040, #131720); /* Gradiente sutil */
+    border: 3px solid #ef4444; /* Borde Rojo VIVO */
+}
+.parlay-millonario .parlay-badge, .parlay-millonario .parlay-cuota-valor {
+    color: #f87171; /* Rojo claro para destacar la cuota alta */
+}
+.parlay-millonario .boton-parlay-ia {
+    background-color: #ef4444;
+    color: #fff;
+}
+.parlay-millonario .boton-parlay-ia:hover {
+    background-color: #dc2626;
+}
+
+
+.parlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.parlay-badge {
+    font-size: 1.1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.parlay-probabilidad {
+    font-size: 0.8em;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+.parlay-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.picks-list {
+    flex-grow: 1;
+    min-width: 50%;
+}
+
+.pick-line {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #e5e7eb;
+}
+
+.pick-line strong {
+    color: #fff;
+}
+
+.parlay-total {
+    text-align: right;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 30%;
+}
+
+.parlay-cuota-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.parlay-cuota-valor {
+    font-family: var(--font-family-titulo);
+    font-size: 2.8em;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.boton-parlay-ia {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    margin-top: 25px;
+    font-size: 1em;
+    font-weight: 900;
+    border-radius: var(--border-radius-pequeño);
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.boton-parlay-ia:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+
+/* MEDIA QUERIES para Móviles */
+@media (max-width: 768px) {
+    .parlay-grid {
+        grid-template-columns: 1fr; /* Columna única en móvil */
+        gap: 20px;
+    }
+    .parlay-ia-card {
+        padding: 20px;
+    }
+    .parlay-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .parlay-total {
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
+    }
+    .parlay-cuota-valor {
+        font-size: 2em;
+    }
+}

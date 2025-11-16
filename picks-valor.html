@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picks de Valor - Lista Completa</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="layout-principal">
+
+        <div class="nav-lateral">
+            <div class="nav-header">Análisis EV</div>
+            
+            <a href="index.html">Dashboard Principal</a>
+            <a href="picks-valor.html" class="activo">Picks de Valor</a>
+            <a href="historial.html">Historial de Picks</a> 
+            <a href="tendencias-globales.html">Tendencias Globales</a> 
+            
+            <div class="widget-patrocinio">
+                <div class="patrocinio-header">
+                    <span class="icono-patrocinio">✨</span>
+                    <p>Patrocinio Exclusivo</p>
+                </div>
+                <p class="patrocinio-mensaje">
+                    Tu marca, alineada con el análisis de alto rendimiento.
+                </p>
+                <a href="mailto:contacto@tusitio.com" class="boton-patrocinio">
+                    Solicitar Información
+                </a>
+            </div>
+        </div>
+
+        <div class="contenido-principal">
+            
+            <div class="header-contenido">
+                <h1>Picks de Valor de la Jornada</h1>
+                <p>Lista completa de oportunidades con calificación de riesgo filtrables por deporte y liga.</p>
+            </div>
+
+            <div class="filtros-picks-container">
+                <div class="filtro-deporte">
+                    <label for="filtro-deporte">Deporte:</label>
+                    <select id="filtro-deporte" class="input-estilizado">
+                        <option value="todos">Todos</option>
+                        <option value="futbol">Fútbol</option>
+                        <option value="nba">NBA</option>
+                        <option value="tenis">Tenis</option>
+                    </select>
+                </div>
+                <div class="filtro-liga">
+                    <label for="filtro-liga">Liga:</label>
+                    <select id="filtro-liga" class="input-estilizado">
+                        <option value="todos">Todas</option>
+                        <option value="pl">Premier League</option>
+                        <option value="bundesliga">Bundesliga</option>
+                        <option value="seriea">Serie A</option>
+                    </select>
+                </div>
+                <div class="info-adicional">
+                    <p>Total de Picks Activos: **12**</p>
+                </div>
+            </div>
+
+            <div class="picks-grid-completo">
+
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">FÚTBOL - Premier League</span>
+                        <span class="hora">08:00 PM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Liverpool vs. Man. Utd.</h3>
+                        <p class="pronostico">Liverpool Gana y Ambos Anotan</p>
+                    </div>
+                    <div class="card-metricas">
+                        <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-bajo">RIESGO BAJO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">1.85</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">61%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">NBA - Temporada Regular</span>
+                        <span class="hora">09:00 PM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Lakers vs. Celtics</h3>
+                        <p class="pronostico">Más de 220.5 pts</p>
+                    </div>
+                    <div class="card-metricas">
+                         <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-medio">RIESGO MEDIO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">1.92</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">55%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">TENIS - ATP Tour</span>
+                        <span class="hora">07:00 AM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Alcaraz vs Djokovic</h3>
+                        <p class="pronostico">Djokovic Hándicap -2.5 juegos</p>
+                    </div>
+                    <div class="card-metricas">
+                         <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-alto">RIESGO ALTO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">2.05</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">65%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+                
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">FÚTBOL - Serie A</span>
+                        <span class="hora">02:00 PM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Inter vs Milan</h3>
+                        <p class="pronostico">Menos de 2.5 goles</p>
+                    </div>
+                    <div class="card-metricas">
+                         <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-medio">RIESGO MEDIO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">2.10</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">53%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+                
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">FÚTBOL - Bundesliga</span>
+                        <span class="hora">03:30 PM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Bayern vs BVB</h3>
+                        <p class="pronostico">Gana Bayern -1.5</p>
+                    </div>
+                    <div class="card-metricas">
+                         <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-bajo">RIESGO BAJO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">1.95</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">58%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+
+                <div class="card pick-list-card pick-pendiente">
+                    <div class="card-metadatos">
+                        <div class="card-status status-pendiente">ACTIVO</div>
+                        <span class="liga">NBA - Temporada Regular</span>
+                        <span class="hora">08:30 PM</span>
+                    </div>
+                    <div class="card-principal">
+                        <h3 class="partido">Knicks vs Nets</h3>
+                        <p class="pronostico">Knicks Hándicap -3.5 pts</p>
+                    </div>
+                    <div class="card-metricas">
+                         <div class="metrica metrica-calificacion">
+                            <div class="risk-badge badge-bajo">RIESGO BAJO</div>
+                            <span class="valor-label">NIVEL RECOMENDADO</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">1.78</span>
+                            <span class="valor-label">Cuota Actual</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="valor-num">62%</span>
+                            <span class="valor-label">PROBABILIDAD IA</span>
+                        </div>
+                    </div>
+                    <a href="analisis-detalle.html" class="boton-analisis">Ver Análisis</a>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

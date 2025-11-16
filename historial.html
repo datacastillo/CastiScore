@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Picks - Análisis EV</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="layout-principal">
+
+        <div class="nav-lateral">
+            <div class="nav-header">Análisis EV</div>
+            
+            <a href="index.html">Dashboard Principal</a>
+            <a href="picks-valor.html">Picks de Valor</a>
+            <a href="historial.html" class="activo">Historial de Picks</a> 
+            <a href="tendencias-globales.html">Tendencias Globales</a> 
+            
+            <div class="widget-patrocinio">
+                <div class="patrocinio-header">
+                    <span class="icono-patrocinio">✨</span>
+                    <p>Patrocinio Exclusivo</p>
+                </div>
+                <p class="patrocinio-mensaje">
+                    Tu marca, alineada con el análisis de alto rendimiento.
+                </p>
+                <a href="mailto:contacto@tusitio.com" class="boton-patrocinio">
+                    Solicitar Información
+                </a>
+            </div>
+        </div>
+
+        <div class="contenido-principal">
+            
+            <div class="header-contenido">
+                <h1>Rendimiento y Historial de Picks</h1>
+                <p>Análisis de las series de resultados y desempeño por niveles de riesgo.</p>
+            </div>
+            
+            <div class="card racha-hero-card" style="margin-bottom: 30px;">
+                <div class="racha-titulo">Racha Actual de Picks</div>
+                <div class="racha-principal">
+                    <span class="racha-contador positivo">W-W-W-L-W-W</span>
+                    <h2 class="racha-resultado">5 Victorias Consecutivas</h2>
+                    <p class="racha-mensaje">El modelo se encuentra en un periodo de alto rendimiento.</p>
+                </div>
+                <div class="racha-datos-historicos">
+                    <div class="dato-historico-item">
+                        <span class="historico-valor">12</span>
+                        <span class="historico-label">Máxima Racha Ganadora</span>
+                    </div>
+                    <div class="dato-historico-item">
+                        <span class="historico-valor negativo">3</span>
+                        <span class="historico-label">Máxima Racha Perdedora</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="font-size: 1.8em; margin-top: 40px; margin-bottom: 20px;">Rendimiento por Nivel de Riesgo (Últimos 30 días)</h2>
+
+            <div class="grid-rendimiento-riesgo" style="margin-bottom: 40px;">
+                
+                <div class="card rendimiento-card badge-bajo">
+                    <div class="rendimiento-header">RIESGO BAJO</div>
+                    <div class="rendimiento-metricas">
+                        <span class="metricas-valor positivo">78%</span>
+                        <span class="metricas-label">Tasa de Acierto</span>
+                    </div>
+                    <div class="rendimiento-detalle">
+                        <p>Total de Picks: 50 | W: 39, L: 11</p>
+                    </div>
+                </div>
+
+                <div class="card rendimiento-card badge-medio">
+                    <div class="rendimiento-header">RIESGO MEDIO</div>
+                    <div class="rendimiento-metricas">
+                        <span class="metricas-valor positivo">62%</span>
+                        <span class="metricas-label">Tasa de Acierto</span>
+                    </div>
+                    <div class="rendimiento-detalle">
+                        <p>Total de Picks: 35 | W: 21, L: 14</p>
+                    </div>
+                </div>
+                
+                <div class="card rendimiento-card badge-alto">
+                    <div class="rendimiento-header">RIESGO ALTO</div>
+                    <div class="rendimiento-metricas">
+                        <span class="metricas-valor negativo">45%</span>
+                        <span class="metricas-label">Tasa de Acierto</span>
+                    </div>
+                    <div class="rendimiento-detalle">
+                        <p>Total de Picks: 20 | W: 9, L: 11</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <h2 style="font-size: 1.8em; margin-top: 40px; margin-bottom: 20px;">Registro de Picks Pasados</h2>
+            <div class="filtros-picks-container historial-filtros">
+                <div class="filtro-deporte">
+                    <label for="filtro-resultado">Resultado:</label>
+                    <select id="filtro-resultado" class="input-estilizado">
+                        <option value="todos">Todos los resultados</option>
+                        <option value="ganado">Ganado</option>
+                        <option value="perdido">Perdido</option>
+                        <option value="pendiente">Pendiente</option>
+                    </select>
+                </div>
+                <div class="filtro-liga">
+                    <label for="filtro-fecha">Período:</label>
+                    <select id="filtro-fecha" class="input-estilizado">
+                        <option value="semana">Última Semana</option>
+                        <option value="mes">Último Mes</option>
+                        <option value="trimestre">Último Trimestre</option>
+                    </select>
+                </div>
+                <div class="info-adicional">
+                    <p>Picks mostrados: **50**</p>
+                </div>
+            </div>
+
+            <div class="card tabla-historial-contenedor">
+                <table class="tabla-historial">
+                    <thead>
+                        <tr>
+                            <th>Fecha/Hora</th>
+                            <th>Partido y Pronóstico</th>
+                            <th>Cuota</th>
+                            <th>Prob. IA</th>
+                            <th>Riesgo</th>
+                            <th>Resultado</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pick-ganado">
+                            <td>20/11 - 10:00 AM</td>
+                            <td>**Bayern vs. Union** - Bayern Gana y Over 3.5</td>
+                            <td>1.75</td>
+                            <td>65%</td>
+                            <td>BAJO</td>
+                            <td class="resultado-badge badge-ganado">GANADO</td>
+                            <td><a href="analisis-detalle.html" class="boton-detalle-tabla">Ver</a></td>
+                        </tr>
+                        <tr class="pick-perdido">
+                            <td>20/11 - 03:00 PM</td>
+                            <td>**Inter vs. Juve** - Menos de 2.5 Goles</td>
+                            <td>2.00</td>
+                            <td>53%</td>
+                            <td>MEDIO</td>
+                            <td class="resultado-badge badge-perdido">PERDIDO</td>
+                            <td><a href="analisis-detalle.html" class="boton-detalle-tabla">Ver</a></td>
+                        </tr>
+                        <tr class="pick-pendiente">
+                            <td>21/11 - 09:00 PM</td>
+                            <td>**Lakers vs. Suns** - Lakers Hándicap -4.5</td>
+                            <td>1.88</td>
+                            <td>60%</td>
+                            <td>BAJO</td>
+                            <td class="resultado-badge badge-pendiente">PENDIENTE</td>
+                            <td><a href="analisis-detalle.html" class="boton-detalle-tabla">Ver</a></td>
+                        </tr>
+                        <tr class="pick-ganado">
+                            <td>19/11 - 08:00 PM</td>
+                            <td>**Chelsea vs. City** - Ambos Anotan</td>
+                            <td>1.90</td>
+                            <td>56%</td>
+                            <td>MEDIO</td>
+                            <td class="resultado-badge badge-ganado">GANADO</td>
+                            <td><a href="analisis-detalle.html" class="boton-detalle-tabla">Ver</a></td>
+                        </tr>
+                         <tr class="pick-perdido">
+                            <td>18/11 - 11:00 AM</td>
+                            <td>**Nadal vs. Ruud** - Nadal 2-0 Sets</td>
+                            <td>1.65</td>
+                            <td>68%</td>
+                            <td>BAJO</td>
+                            <td class="resultado-badge badge-perdido">PERDIDO</td>
+                            <td><a href="analisis-detalle.html" class="boton-detalle-tabla">Ver</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

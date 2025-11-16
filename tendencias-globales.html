@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendencias Globales - Análisis EV</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="layout-principal">
+
+        <div class="nav-lateral">
+            <div class="nav-header">Análisis EV</div>
+            
+            <a href="index.html">Dashboard Principal</a>
+            <a href="picks-valor.html">Picks de Valor</a>
+            <a href="historial.html">Historial de Picks</a> 
+            <a href="tendencias-globales.html" class="activo">Tendencias Globales</a> 
+            
+            <div class="widget-patrocinio">
+                <div class="patrocinio-header">
+                    <span class="icono-patrocinio">✨</span>
+                    <p>Patrocinio Exclusivo</p>
+                </div>
+                <p class="patrocinio-mensaje">
+                    Tu marca, alineada con el análisis de alto rendimiento.
+                </p>
+                <a href="mailto:contacto@tusitio.com" class="boton-patrocinio">
+                    Solicitar Información
+                </a>
+            </div>
+        </div>
+
+        <div class="contenido-principal">
+            
+            <div class="header-contenido">
+                <h1>Tendencias Globales de Valor</h1>
+                <p>Análisis de la distribución de picks de valor a través de ligas, deportes y mercados.</p>
+            </div>
+
+            <h2 class="sub-seccion-titulo">Distribución de Oportunidades por Deporte (Última Semana)</h2>
+            <div class="card card-grafico-resumen">
+                <div class="grafico-distribucion">
+                    
+                    <div class="barra-distribucion" style="width: 50%;">
+                        <span class="etiqueta">FÚTBOL (50%)</span>
+                    </div>
+                    <div class="barra-distribucion barra-nba" style="width: 30%;">
+                        <span class="etiqueta">NBA (30%)</span>
+                    </div>
+                    <div class="barra-distribucion barra-tenis" style="width: 15%;">
+                        <span class="etiqueta">TENIS (15%)</span>
+                    </div>
+                    <div class="barra-distribucion barra-otros" style="width: 5%;">
+                        <span class="etiqueta">OTROS (5%)</span>
+                    </div>
+                </div>
+                <p class="nota-distribucion">El fútbol mantiene la mayor concentración de valor esta semana, especialmente en mercados de Goles y Hándicaps.</p>
+            </div>
+
+            <h2 class="sub-seccion-titulo">Ligas con Mayor Expected Value (EV) Positivo</h2>
+            
+            <div class="card tabla-rendimiento-contenedor">
+                <table class="tabla-rendimiento-ligas">
+                    <thead>
+                        <tr>
+                            <th>Liga</th>
+                            <th>Deporte</th>
+                            <th>Picks Total</th>
+                            <th>Tasa Acierto</th>
+                            <th>EV Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**Premier League (ENG)**</td>
+                            <td>Fútbol</td>
+                            <td>35</td>
+                            <td class="positivo">72%</td>
+                            <td class="positivo">+8.5%</td>
+                        </tr>
+                        <tr>
+                            <td>**Euroliga**</td>
+                            <td>Baloncesto</td>
+                            <td>12</td>
+                            <td class="positivo">67%</td>
+                            <td class="positivo">+6.1%</td>
+                        </tr>
+                        <tr>
+                            <td>**Serie A (ITA)**</td>
+                            <td>Fútbol</td>
+                            <td>28</td>
+                            <td class="positivo">68%</td>
+                            <td class="positivo">+4.9%</td>
+                        </tr>
+                        <tr>
+                            <td>**NFL**</td>
+                            <td>Fútbol Americano</td>
+                            <td>9</td>
+                            <td class="negativo">51%</td>
+                            <td class="negativo">-1.2%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="nota-tendencia">Se recomienda enfocarse en mercados Over/Under en la Premier League, donde el EV es consistentemente más alto.</p>
+            </div>
+            
+            <h2 class="sub-seccion-titulo">Rendimiento por Tipo de Mercado</h2>
+            <div class="card mercado-resumen-grid">
+                
+                <div class="mercado-item">
+                    <span class="mercado-nombre">Goles (Over/Under)</span>
+                    <span class="mercado-valor positivo">71%</span>
+                    <span class="mercado-label">Tasa de Acierto</span>
+                </div>
+                
+                <div class="mercado-item">
+                    <span class="mercado-nombre">Ganador (1X2)</span>
+                    <span class="mercado-valor positivo">65%</span>
+                    <span class="mercado-label">Tasa de Acierto</span>
+                </div>
+                
+                <div class="mercado-item">
+                    <span class="mercado-nombre">Hándicap</span>
+                    <span class="mercado-valor positivo">68%</span>
+                    <span class="mercado-label">Tasa de Acierto</span>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

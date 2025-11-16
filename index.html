@@ -3,112 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CastiScore</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Principal - Análisis EV</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="titulo">CastiScore</h1>
-        <button class="boton-iniciar-sesion">Iniciar sesión</button>
-    </header>
-
     <div class="layout-principal">
-        
-        <nav class="nav-lateral">
-            <a href="#" class="activo">Predicciones</a>
-            <a href="#">Resultados</a>
-            <a href="#">Ligas</a>
-            <a href="#">Estadísticas</a>
-        </nav>
 
-        <main class="contenido-principal">
+        <div class="nav-lateral">
+            <div class="nav-header">Análisis EV</div>
             
-            <div class="card">
-                <h2>Partidos Relevantes</h2>
-                <div class="carrusel-auto">
-                    <div class="cinta">
-                        <div class="partido">🇪🇸 Real Madrid vs Barcelona</div>
-                        <div class="partido">🇲🇽 Tigres vs América</div>
-                        <div class="partido">🏴‍☠️ Arsenal vs Chelsea</div>
-                        <div class="partido">🇮🇹 Juventus vs Napoli</div>
-                        <div class="partido">🇫🇷 PSG vs Lyon</div>
-                        <div class="partido">🇪🇸 Real Madrid vs Barcelona</div>
-                        <div class="partido">🇲🇽 Tigres vs América</div>
-                        <div class="partido">🏴‍☠️ Arsenal vs Chelsea</div>
-                        <div class="partido">🇮🇹 Juventus vs Napoli</div>
-                        <div class="partido">🇫🇷 PSG vs Lyon</div>
-                    </div>
+            <a href="index.html" class="activo">Dashboard Principal</a>
+            <a href="picks-valor.html">Picks de Valor</a>
+            <a href="historial.html">Historial de Picks</a> 
+            <a href="tendencias-globales.html">Tendencias Globales</a> 
+            
+            <div class="widget-patrocinio">
+                <div class="patrocinio-header">
+                    <span class="icono-patrocinio">✨</span>
+                    <p>Patrocinio Exclusivo</p>
                 </div>
+                <p class="patrocinio-mensaje">
+                    Tu marca, alineada con el análisis de alto rendimiento.
+                </p>
+                <a href="mailto:contacto@tusitio.com" class="boton-patrocinio">
+                    Solicitar Información
+                </a>
+            </div>
+        </div>
+
+        <div class="contenido-principal">
+            
+            <div class="header-contenido">
+                <h1>Dashboard Principal</h1>
+                <p>El pronóstico más valioso de la jornada, diseñado para ti.</p>
             </div>
 
-            <div class="card">
-                <h2>Predicciones del Día</h2>
-
-                <div class="predicciones-grid">
-
-                    <div class="prediccion">
-                        <div class="prediccion-header">
-                            <span class="liga">La Liga</span>
-                            <span class="fecha">22 SEP 2025 - 14:00</span>
-                        </div>
-                        <div class="prediccion-body">
-                            <h3 class="equipos">Real Madrid vs FC Barcelona</h3>
-                            <p class="pronostico">Gana Real Madrid</p>
-                        </div>
-                        <div class="prediccion-footer">
-                            <span class="status pendiente">Pendiente</span>
-                        </div>
+            <div class="seccion-destacada">
+                
+                <div class="card hero-data-core">
+                    <div class="data-core-header">
+                        <span class="sub-header-pick">PICK DESTACADO DEL DÍA</span>
+                        <p class="match-meta">FÚTBOL - Premier League | 08:00 PM</p>
                     </div>
 
-                    <div class="prediccion">
-                        <div class="prediccion-header">
-                            <span class="liga">Premier League</span>
-                            <span class="fecha">22 SEP 2025 - 11:30</span>
-                        </div>
-                        <div class="prediccion-body">
-                            <h3 class="equipos">Arsenal vs Chelsea</h3>
-                            <p class="pronostico">Ambos Anotan</p>
-                        </div>
-                        <div class="prediccion-footer">
-                            <span class="status pendiente">Pendiente</span>
-                        </div>
-                    </div>
-
-                    <div class="prediccion">
-                        <div class="prediccion-header">
-                            <span class="liga">Liga MX</span>
-                            <span class="fecha">22 SEP 2025 - 20:00</span>
-                        </div>
-                        <div class="prediccion-body">
-                            <h3 class="equipos">Tigres vs América</h3>
-                            <p class="pronostico">Más de 2.5 Goles</p>
-                        </div>
-                        <div class="prediccion-footer">
-                            <span class="status pendiente">Pendiente</span>
+                    <div class="data-core-body"> 
+                        <div class="data-core-match">
+                            <div class="match-teams">
+                                <div class="team-badge" style="background-color: #C8102E;">LFC</div>
+                                <span class="vs-text">VS</span>
+                                <div class="team-badge" style="background-color: #DA291C;">MU</div>
+                            </div>
+                            <h2 class="match-title">Liverpool vs. Man. Utd.</h2>
+                            <div class="core-pronostico">
+                                Pronóstico: Liverpool Gana y Ambos Anotan
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="prediccion">
-                        <div class="prediccion-header">
-                            <span class="liga">Serie A</span>
-                            <span class="fecha">23 SEP 2025 - 13:45</span>
+                    <div class="data-core-metrics-bar">
+                        
+                        <div class="core-metrica metrica-calificacion">
+                            <div class="risk-badge badge-bajo">RIESGO BAJO</div>
+                            <span class="metrica-valor-label">NIVEL RECOMENDADO</span>
                         </div>
-                        <div class="prediccion-body">
-                            <h3 class="equipos">Juventus vs Napoli</h3>
-                            <p class="pronostico">Menos de 2.5 Goles</p>
+                        
+                        <div class="core-metrica">
+                            <span class="metrica-valor-num">1.85</span>
+                            <span class="metrica-valor-label">Cuota Actual</span>
                         </div>
-                        <div class="prediccion-footer">
-                            <span class="status pendiente">Pendiente</span>
+                        <div class="core-metrica">
+                            <span class="metrica-valor-num">61%</span>
+                            <span class="metrica-valor-label">PROBABILIDAD IA</span>
                         </div>
+                        <a href="analisis-detalle.html" class="boton-data-core">
+                            VER ANÁLISIS COMPLETO
+                        </a>
                     </div>
-
                 </div>
             </div>
+            
+            <div class="parlay-millonario-container parlay-grid">
+                
+                <div class="card parlay-ia-card parlay-favorito">
+                    <div class="parlay-header">
+                        <span class="parlay-badge">🥇 PARLAY FAVORITO IA</span>
+                        <span class="parlay-probabilidad">Probabilidad IA: 25.5%</span>
+                    </div>
+                    <div class="parlay-content">
+                        
+                        <div class="picks-list">
+                            <p class="pick-line">1. **Bayern Munich** vs. Stuttgart: Bayern Gana</p>
+                            <p class="pick-line">2. **Real Madrid** vs. Girona: Real Madrid Gana</p>
+                            <p class="pick-line">3. **Golden State** vs. Houston: Golden State Gana (-5.5)</p>
+                        </div>
+                        
+                        <div class="parlay-total">
+                            <span class="parlay-cuota-label">CUOTA TOTAL ESTIMADA</span>
+                            <span class="parlay-cuota-valor">@3.50</span>
+                        </div>
+                    </div>
+                    <a href="#" class="boton-parlay-ia">¡Ir por la Razón!</a>
+                </div>
 
-        </main>
+                <div class="card parlay-ia-card parlay-millonario">
+                    <div class="parlay-header">
+                        <span class="parlay-badge">✨ PARLAY MILLONARIO IA</span>
+                        <span class="parlay-probabilidad">Probabilidad IA: 4.5%</span>
+                    </div>
+                    <div class="parlay-content">
+                        
+                        <div class="picks-list">
+                            <p class="pick-line">1. **Lakers vs. Suns:** Lakers Gana (-4.5)</p>
+                            <p class="pick-line">2. **Inter vs. Juve:** Menos de 2.5 Goles</p>
+                            <p class="pick-line">3. **Bayern vs. BVB:** Bayern Gana y Over 3.5 Goles</p>
+                        </div>
+                        
+                        <div class="parlay-total">
+                            <span class="parlay-cuota-label">CUOTA TOTAL ESTIMADA</span>
+                            <span class="parlay-cuota-valor">@45.00</span>
+                        </div>
+                    </div>
+                    <a href="#" class="boton-parlay-ia">¡Ir por la Gloria!</a>
+                </div>
 
-    </div> 
+            </div>
 
+
+            <div class="seccion-destacada-secundaria">
+                <h2 style="font-size: 1.8em; margin-bottom: 20px; margin-top: 40px;">Otras Oportunidades del Día</h2>
+                <div class="picks-destacados-grid">
+                    
+                    <div class="card pick-destacado-card pick-pendiente">
+                        <div class="pick-destacado-header"><span class="status-pendiente">ACTIVO</span><span>NBA - Temporada Regular</span><span>09:00 PM</span></div>
+                        <div class="pick-destacado-body">
+                            <h3>Lakers vs. Celtics</h3>
+                            <div class="pick-destacado-pronostico">Pronóstico: Más de 220.5 pts</div>
+                            <div class="pick-destacado-metricas">
+                                <div class="pick-destacado-metrica positivo"><strong>R. MEDIO</strong></div>
+                                <div class="pick-destacado-metrica"><strong>55.1%</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pick-destacado-card pick-pendiente">
+                        <div class="pick-destacado-header"><span class="status-pendiente">ACTIVO</span><span>FÚTBOL - Bundesliga</span><span>03:30 PM</span></div>
+                        <div class="pick-destacado-body">
+                            <h3>Bayern vs BVB</h3>
+                            <div class="pick-destacado-pronostico">Pronóstico: Gana Bayern -1.5</div>
+                            <div class="pick-destacado-metricas">
+                                <div class="pick-destacado-metrica positivo"><strong>R. BAJO</strong></div>
+                                <div class="pick-destacado-metrica"><strong>58.0%</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pick-destacado-card pick-pendiente">
+                        <div class="pick-destacado-header"><span class="status-pendiente">ACTIVO</span><span>TENIS - ATP Tour</span><span>07:00 AM</span></div>
+                        <div class="pick-destacado-body">
+                            <h3>Alcaraz vs Djokovic</h3>
+                            <div class="pick-destacado-pronostico">Pronóstico: Djokovic Hándicap -2.5 juegos</div>
+                            <div class="pick-destacado-metricas">
+                                <div class="pick-destacado-metrica positivo"><strong>R. ALTO</strong></div>
+                                <div class="pick-destacado-metrica"><strong>65.0%</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>

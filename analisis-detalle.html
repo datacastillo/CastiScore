@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Detallado - Liverpool vs Man. Utd.</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="layout-principal">
+
+        <div class="nav-lateral">
+            <div class="nav-header">Análisis EV</div>
+            
+            <a href="index.html">Dashboard Principal</a>
+            <a href="picks-valor.html">Picks de Valor</a>
+            <a href="historial.html">Historial de Picks</a> 
+            <a href="tendencias-globales.html">Tendencias Globales</a> 
+            
+            <div class="widget-patrocinio">
+                <div class="patrocinio-header">
+                    <span class="icono-patrocinio">✨</span>
+                    <p>Patrocinio Exclusivo</p>
+                </div>
+                <p class="patrocinio-mensaje">
+                    Tu marca, alineada con el análisis de alto rendimiento.
+                </p>
+                <a href="mailto:contacto@tusitio.com" class="boton-patrocinio">
+                    Solicitar Información
+                </a>
+            </div>
+        </div>
+
+        <div class="contenido-principal">
+            
+            <div class="header-contenido">
+                <h1>Análisis Detallado del Pick</h1>
+                <p>Justificación estadística de la probabilidad de éxito (IA) y nivel de riesgo.</p>
+            </div>
+
+            <div class="card detalle-hero-header">
+                <div class="detalle-partido-info">
+                    <span class="detalle-liga">FÚTBOL | Premier League | 08:00 PM</span>
+                    <h2 class="detalle-titulo">Liverpool vs. Manchester United</h2>
+                    <p class="detalle-pronostico">Pronóstico: **Liverpool Gana y Ambos Anotan**</p>
+                </div>
+                
+                <div class="detalle-metricas-resumen">
+                    <div class="resumen-metrica">
+                        <span class="resumen-valor-num">1.85</span>
+                        <span class="resumen-valor-label">Cuota Actual</span>
+                    </div>
+                    <div class="resumen-metrica">
+                        <span class="resumen-valor-num is-ia">61%</span>
+                        <span class="resumen-valor-label">PROBABILIDAD IA</span>
+                    </div>
+                    <div class="resumen-metrica">
+                        <div class="risk-badge badge-bajo">RIESGO BAJO</div>
+                        <span class="resumen-valor-label">NIVEL RECOMENDADO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detalle-cuerpo-analisis">
+                
+                <div class="card detalle-seccion">
+                    <h3 class="seccion-titulo">1. Justificación del Modelo IA</h3>
+                    <p class="seccion-parrafo">
+                        Nuestro algoritmo asigna una **Probabilidad IA del 61%** a este resultado, lo cual, al compararse con la probabilidad implícita de la cuota (54%), genera un alto *Expected Value (EV)*. Este nivel de riesgo se considera BAJO gracias a la consistencia de los siguientes factores:
+                    </p>
+                    <ul class="lista-justificacion">
+                        <li>**Forma Local (Liverpool):** Ha promediado 3.1 Goles Esperados (xG) en casa en los últimos 5 partidos de liga, con una tasa de conversión del 91% en situaciones claras.</li>
+                        <li>**Historial H2H:** El 70% de los enfrentamientos recientes en Anfield han terminado con victoria de Liverpool y anotación de ambos equipos, siendo un patrón recurrente.</li>
+                        <li>**Alineación Clave:** La baja confirmada del central de Man. Utd. reduce significativamente su capacidad defensiva contra ataques rápidos.</li>
+                    </ul>
+                </div>
+
+                <div class="card detalle-seccion">
+                    <h3 class="seccion-titulo">2. Distribución de Probabilidades de Resultado</h3>
+                    <p class="seccion-parrafo">
+                        El modelo predice las siguientes probabilidades exactas para los 3 escenarios principales:
+                    </p>
+                    <div class="grafico-probabilidad">
+                        <div class="probabilidad-item">
+                            <span class="label">Liverpool Gana</span>
+                            <div class="barra-contenedor">
+                                <div class="barra barra-local" style="width: 70%;">70%</div>
+                            </div>
+                        </div>
+                        <div class="probabilidad-item">
+                            <span class="label">Empate</span>
+                            <div class="barra-contenedor">
+                                <div class="barra barra-empate" style="width: 15%;">15%</div>
+                            </div>
+                        </div>
+                        <div class="probabilidad-item">
+                            <span class="label">Man. Utd. Gana</span>
+                            <div class="barra-contenedor">
+                                <div class="barra barra-visitante" style="width: 15%;">15%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card detalle-seccion">
+                    <h3 class="seccion-titulo">3. Métricas Avanzadas (Últimos 5 Partidos)</h3>
+                    <table class="tabla-metricas">
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Liverpool (Local)</th>
+                                <th>Man. Utd. (Visitante)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Goles Esperados (xG)</td>
+                                <td class="positivo">2.54</td>
+                                <td class="negativo">1.21</td>
+                            </tr>
+                            <tr>
+                                <td>Goles Encajados Esperados (xGA)</td>
+                                <td class="positivo">0.90</td>
+                                <td class="negativo">1.75</td>
+                            </tr>
+                            <tr>
+                                <td>% Posesión Promedio</td>
+                                <td>65%</td>
+                                <td>48%</td>
+                            </tr>
+                            <tr>
+                                <td>Tiros a Puerta (Prom.)</td>
+                                <td class="positivo">7.8</td>
+                                <td class="negativo">3.4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
